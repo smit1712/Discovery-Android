@@ -31,7 +31,6 @@
         android:layout_height="wrap_content"
         android:visibility="gone" />
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/EnemyHealthBar"
@@ -69,8 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ShipHealthtext" />
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
+    <ProgressBar        
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/HealthBar"
@@ -82,7 +80,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/auxiliarypowertext" />
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/auxiliarypower"
@@ -125,18 +122,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Engagebutton" />
-    <Button
+  <Button
         android:text="Navigate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Navigation" />
+
     <Button
         android:text="Disengage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DisengageButton"
         android:visibility="invisible" />
-    <Button
+  <Button
         android:text="Hail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

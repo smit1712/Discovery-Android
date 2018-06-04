@@ -79,6 +79,12 @@ namespace SpaceGame
                     EngageConflict();
                     inconflict = true;
             };
+            Navigate.Click += delegate
+            {
+                var intent = new Intent(this, typeof(nav));
+                intent.PutStringArrayListExtra("phone_numbers", _phoneNumbers);
+                StartActivity(intent);
+            };
             Disengage.Click += delegate
             {
                 DisengageConflict();
