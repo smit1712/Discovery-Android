@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+using System;
 
 namespace SpaceGame
 {
@@ -83,12 +84,20 @@ namespace SpaceGame
             }
             else return false;
         }
+
+
+
+
         public string ChangeHealth(int Damage)
         {
             if (Damage >= shields)
             {
                 this.health = this.health + this.shields - Damage;
                 shields = 0;
+                if (this.health <= 0)
+                {
+                    return "Enemy Destroyed";
+                }
                 return "Enemy is taking direct damage";
             }
             else

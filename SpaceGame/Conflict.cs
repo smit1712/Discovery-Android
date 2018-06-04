@@ -32,6 +32,8 @@ namespace SpaceGame
         string fase4_startCondition;
         bool fase4_enterd;
 
+        public bool enemy;
+
         bool GotHailed = false;
         bool gotscanned = false;
         PlayerShip enemyship = new PlayerShip(0, 0, 0, 0, 0, "", "");
@@ -63,6 +65,7 @@ namespace SpaceGame
                 fase3 = lines[31];
                 fase4_startCondition = lines[40];
                 fase4 = lines[41];
+                enemy = true;
             }
 
         }
@@ -95,13 +98,20 @@ namespace SpaceGame
         public string Underfire(int damage)
         {
             string combatlog = enemyship.ChangeHealth(damage);
+            if(enemyship.GetHealth() <= 0)
+            {
+                enemyship = null;
+                enemy = false;
+                return combatlog;
+            }
             NextTurn();
             return combatlog;
         }
         public string Nextattack()
         {
             
-            return Convert.ToString(enemyship.GetweaponPower());                              
+            return Convert.ToString(enemyship.GetweaponPower());     
+            
         }
     
         public string Nexthail()

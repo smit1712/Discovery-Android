@@ -51,6 +51,7 @@ namespace SpaceGame
             shipname.Text = ship.GetShipname();
             shipview.SetImageResource(srid.Getshipresourceid(ship));
             Button Engage = FindViewById<Button>(Resource.Id.Engagebutton);
+            Button Navigate = FindViewById<Button>(Resource.Id.Navigation);
             Button Disengage = FindViewById<Button>(Resource.Id.DisengageButton);
             Button Hail = FindViewById<Button>(Resource.Id.HailButton);
             Button FireWeapons = FindViewById<Button>(Resource.Id.Fireweapon);
@@ -205,28 +206,36 @@ namespace SpaceGame
             }
             void NextTurn()
             {
-                if ((ship.Getmaxauxiliarypower() - ship.Getauxiliarypower() - ship.GetTotalpower()) * -1 >= 0)
+                if (RandomConflict.enemy == false)
                 {
-                    turntimer++;
-                    EnemyAttack = RandomConflict.Nextattack();
-                    ship.ChangeHealth(Convert.ToInt32(EnemyAttack));
-                    Statchanged();
-                    ConflicDescription.Text = "Red Alert || Turn: " + turntimer+ " || You took " + EnemyAttack + " Damage";
+                    DisengageConflict();
+                }
+                else
+                {
+                    if ((ship.Getmaxauxiliarypower() - ship.Getauxiliarypower() - ship.GetTotalpower()) * -1 >= 0)
+                    {
+                        turntimer++;
+                        EnemyAttack = RandomConflict.Nextattack();
+                        ship.ChangeHealth(Convert.ToInt32(EnemyAttack));
+                        Statchanged();
+                        ConflicDescription.Text = "Red Alert || Turn: " + turntimer + " || You took " + EnemyAttack + " Damage";
+                    }
                 }
             }
 
             void Statchanged()
-            {
-                Healthbar.Progress = ship.GetHealth();
-                auxilarypowerchanged();
-                enemyhealthBar.Progress = RandomConflict.GetEnemyHealth();
-                if (ship.Healthcheck() == false)
-                {
-                    ConflicDescription.Text = "YOU DIED!";
-                    ship.SetTotalauxilarypower(0);
-                    ship.ChangeClass("Ghost");
-                    ship.ChangeShipname("Ghost");
-                }
+            {           
+                    Healthbar.Progress = ship.GetHealth();
+                    auxilarypowerchanged();
+                    enemyhealthBar.Progress = RandomConflict.GetEnemyHealth();
+                    if (ship.Healthcheck() == false)
+                    {
+                        ConflicDescription.Text = "YOU DIED!";
+                        ship.SetTotalauxilarypower(0);
+                        ship.ChangeClass("Ghost");
+                        ship.ChangeShipname("Ghost");
+                    }
+               
             }
 
 
