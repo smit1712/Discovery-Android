@@ -11,6 +11,7 @@ using Android.Content.Res;
 using Android.Graphics;
 using System.Linq;
 using Android.Views;
+using Android.Content;
 
 namespace SpaceGame
 {
@@ -82,8 +83,8 @@ namespace SpaceGame
             Navigate.Click += delegate
             {
                 var intent = new Intent(this, typeof(nav));
-                intent.PutStringArrayListExtra("phone_numbers", _phoneNumbers);
-                StartActivity(intent);
+
+                StartActivity(inten);
             };
             Disengage.Click += delegate
             {
