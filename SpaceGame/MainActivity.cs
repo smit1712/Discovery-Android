@@ -11,6 +11,7 @@ using Android.Content.Res;
 using Android.Graphics;
 using System.Linq;
 using Android.Views;
+using Android.Content;
 
 namespace SpaceGame
 {
@@ -78,6 +79,12 @@ namespace SpaceGame
             {               
                     EngageConflict();
                     inconflict = true;
+            };
+            Navigate.Click += delegate
+            {
+                var intent = new Intent(this, typeof(nav));
+
+                StartActivity(inten);
             };
             Disengage.Click += delegate
             {
