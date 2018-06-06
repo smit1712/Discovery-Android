@@ -129,7 +129,7 @@
         android:text="Navigate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Nbutton" />
+        android:id="@+id/Navigation" />
     <Button
         android:text="Disengage"
         android:layout_width="match_parent"

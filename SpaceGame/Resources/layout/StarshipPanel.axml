@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/linearLayout1">
+    <TextView
+        android:text="Green Alert"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/ConflictText"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="start" />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/space1" />
+  </LinearLayout>
+  <TextView
+      android:text="enemyshipname"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:id="@+id/Enemyshipname"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:visibility="gone" />
+  <ProgressBar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/EnemyHealthBar"
+      android:visibility="gone"
+      android:progress="20" />
+  <TextView
+      android:text="CombatLog"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/CombatLog" />
+  <TextView
+      android:text="Ship-Name"
+      android:textAppearance="?android:attr/textAppearanceLarge"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/Shipname" />
+  <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/frameLayout1"
+      tools:visibility="visible">
+    <ImageView
+        android:src="@drawable/akira"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shipview"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="0.0dp" />
+  </FrameLayout>
+  <TextView
+      android:text="ShipHealth"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/ShipHealthtext" />
+  <ProgressBar
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/HealthBar"
+      android:progress="66" />
+  <TextView
+      android:text="auxiliary power"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/auxiliarypowertext" />
+  <ProgressBar
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/auxiliarypower"
+      android:progress="50" />
+  <TextView
+      android:text="ShipPower"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/ShipPowertext" />
+  <SeekBar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/powerbar"
+      android:max="100" />
+  <TextView
+      android:text="ShipSpeed"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/Shipspeedtext" />
+  <SeekBar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/shipspeed"
+      android:max="100" />
+  <TextView
+      android:text="ShipShield"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/ShipShieldtext" />
+  <SeekBar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/shipshield"
+      android:max="100" />
+  <Button
+      android:text="Engage"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/Engagebutton" />
+  <Button
+      android:text="Navigate"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/Navigation" />
+  <Button
+      android:text="Disengage"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/DisengageButton"
+      android:visibility="invisible" />
+  <Button
+      android:text="Hail"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/HailButton"
+      android:visibility="invisible" />
+  <Button
+      android:text="Fire Weapons"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/Fireweapon"
+      android:visibility="invisible" />
+  <Button
+      android:text="Scan Object"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/ScanButton"
+      android:visibility="invisible" />
+</LinearLayout>

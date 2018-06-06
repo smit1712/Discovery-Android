@@ -51,7 +51,7 @@ namespace SpaceGame
             shipname.Text = ship.GetShipname();
             shipview.SetImageResource(srid.Getshipresourceid(ship));
             Button Engage = FindViewById<Button>(Resource.Id.Engagebutton);
-            Button Navigate = FindViewById<Button>(Resource.Id.Navigation);
+            Button Navigate = FindViewById<Button>(Resource.Id.Nbutton);
             Button Disengage = FindViewById<Button>(Resource.Id.DisengageButton);
             Button Hail = FindViewById<Button>(Resource.Id.HailButton);
             Button FireWeapons = FindViewById<Button>(Resource.Id.Fireweapon);
@@ -83,6 +83,11 @@ namespace SpaceGame
             {
                 DisengageConflict();
                 inconflict = false;
+            };
+            Navigate.Click += delegate 
+            {
+              //  Intent Navpanel = new Intent(this, typeof(Na))
+                //StartActivity(nav);
             };
             Hail.Click += delegate
             {
